@@ -1,9 +1,8 @@
-# coding:utf-8
-# import translate_context
+
 from os import path
 import chnSegment
 import plotWordcloud
-import youdaotranslate
+
 
 if __name__=='__main__':
 
