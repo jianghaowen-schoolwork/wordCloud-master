@@ -1,5 +1,5 @@
 from os import path
-
+import datetime
 
 def forwardCut(text, dict_list):
     word_list = []
@@ -52,23 +52,21 @@ def bidirectional_segment(text, dict_list):
             return b
 
 if __name__ == '__main__':
+    print(datetime.datetime.now())
     d = path.dirname(__file__)
     dict_list = []
     word_list = []
-    with open('userdict/userdict.txt', 'r') as f:
-        while (True):
+    with open('userdict/new_dict.txt', 'r') as f:
+        for line in f:
             line = f.readline()
             if line != '':
                 dict_list.append(line.split('\n')[0])
-            else:
-                break
-
+    print(dict_list)
     with open('doc/test.txt','r') as fp:
-        while(True):
-            text = fp.readline()
+        for text in fp:
             if text != '':
                 w_list = bidirectional_segment(text, dict_list)
+                print(w_list)
                 word_list += w_list
-            else:
-                break
     print(word_list)
+    print(datetime.datetime.now())

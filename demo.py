@@ -12,9 +12,7 @@ if __name__=='__main__':
 
 
     # 若是中文文本，则先进行分词操作
-    # chinese_text=chnSegment.word_segment(text)
     text = chnSegment.getPseg(text)
-    # print(chinese_text)
     # 生成词云
     # english_text = open(path.join(d, 'doc//content(译文).txt')).read()
     plotWordcloud.generate_wordcloud(text, "Images/chinese.png", 'doc//stopword_chinese.txt')
